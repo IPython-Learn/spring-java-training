@@ -11,4 +11,5 @@ import com.innominds.aop.SpringAOPConfiguration;
 @ComponentScan(basePackages = { "com.innominds.service" })
 public class CoreConfiguration {
 
+    //
 }

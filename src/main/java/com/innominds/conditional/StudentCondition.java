@@ -1,4 +1,4 @@
-package com.innominds.service;
+package com.innominds.conditional;
 
 import org.springframework.context.annotation.Condition;
 import org.springframework.context.annotation.ConditionContext;
@@ -20,6 +20,6 @@ public class StudentCondition implements Condition {
 
         System.err.println("=======================================");
 
-        return true;
+        return false;
     }
 }

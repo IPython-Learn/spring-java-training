@@ -1,18 +1,15 @@
-package com.innominds.config;
+package com.innominds.conditional;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 
-import com.innominds.conditional.StudentCondition;
-import com.innominds.conditional.StudentService;
-
 @Configuration
-public class AdvancedConfiguration {
+public class StudentConfig {
 
     @Bean
     @Conditional(StudentCondition.class)
-    public StudentService studentService() {
+    StudentService studentService() {
         return new StudentService();
     }
 }

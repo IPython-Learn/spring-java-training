@@ -1,4 +1,4 @@
-package com.innominds.service;
+package com.innominds.conditional;
 
 public class StudentService {
 
