@@ -11,7 +11,7 @@ public class BeanScopeConfig {
     @Bean
     @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
     PaymentService paymentService() {
-
+        System.out.println("-----------------");
         return new PaymentService();
 
     }

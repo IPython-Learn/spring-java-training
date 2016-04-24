@@ -1,18 +1,21 @@
-package com.innominds.config;
+package com.innominds.conditional;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 
-import com.innominds.conditional.WindowsMailCondition;
-import com.innominds.conditional.WindowMailServiceImpl;
-
 @Configuration
-public class AdvancedConfiguration {
+public class MailConfig {
 
     @Bean
     @Conditional(WindowsMailCondition.class)
-    public WindowMailServiceImpl studentService() {
+    MailService windowsMailService() {
         return new WindowMailServiceImpl();
+    }
+
+    @Bean
+    @Conditional(MacMailCondition.class)
+    MailService macMailService() {
+        return new MacMailServiceImpl();
     }
 }

@@ -1,8 +1,8 @@
 package com.innominds.conditional;
 
-public class StudentService {
+public class WindowMailServiceImpl implements MailService {
 
-    public StudentService() {
+    public WindowMailServiceImpl() {
         System.err.println(" ##########  StudentService  ##############");
     }
 }

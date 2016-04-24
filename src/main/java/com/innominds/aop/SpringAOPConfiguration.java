@@ -1,8 +1,10 @@
 package com.innominds.aop;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -43,17 +45,29 @@ public class SpringAOPConfiguration {
 
     }
 
+    @AfterReturning("servicePointCut()")
+    public void afterRuturn() {
+        System.out.println("   ------AFTER RETURNING -------");
+    }
+
+    @AfterThrowing(pointcut = "servicePointCut()", throwing = "e")
+    // If @Around advice catches exception after throwing doesn't works
+    public void afterThrowing(JoinPoint jp, RuntimeException e) throws Throwable {
+        System.out.println(" Method signature " + jp.getSignature());
+        System.out.println("   ------AFTER THROWING -------" + e);
+    }
+
     @After("servicePointCut()")
     public void afterMethod() {
         System.out.println("????????????????????????????????????????????");
     }
 
-    @Before("execution(** com.innominds.aop.service.SecurityService.setName(String)) && args(username)")
+    @Before("execution(** com.innominds.aop.service.AccountService.setName(String)) && args(username)")
     public void beforeArgs(String username) {
-        System.out.println(" ARGUMENT PASSED" + username);
+        System.out.println("Argument Passed " + username);
     }
 
-    @Around("execution(** com.innominds.aop.service.*.*())")
+    // @Around("execution(** com.innominds.aop.service.*.*())")
     public Object log(ProceedingJoinPoint joinPoint) {
 
         try {

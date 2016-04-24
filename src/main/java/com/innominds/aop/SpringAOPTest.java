@@ -2,19 +2,19 @@ package com.innominds.aop;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.innominds.aop.service.SecurityService;
+import com.innominds.aop.service.AccountService;
 
 public class SpringAOPTest {
 
     public static void main(String[] args) {
 
         final AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
-        ctx.register(SpringAOPConfiguration.class);
+        ctx.register(AccountServiceAspect.class);
         ctx.refresh();
 
-        final SecurityService securityService = ctx.getBean(SecurityService.class);
+        final AccountService accountService = ctx.getBean(AccountService.class);
 
-        System.out.println(securityService.checkBalance());
+        System.out.println(accountService.checkBalance());
 
         ctx.close();
 

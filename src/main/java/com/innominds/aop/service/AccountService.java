@@ -1,6 +1,6 @@
 package com.innominds.aop.service;
 
-public interface SecurityService {
+public interface AccountService {
 
     public Long getTime();
 
