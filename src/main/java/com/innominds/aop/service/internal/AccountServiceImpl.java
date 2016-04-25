@@ -28,7 +28,6 @@ public class AccountServiceImpl implements AccountService {
         System.out.println("Inside Checking balance");
         // throw new RuntimeException("Balanace checking errror");
         return 500.00;
-
     }
 
 }

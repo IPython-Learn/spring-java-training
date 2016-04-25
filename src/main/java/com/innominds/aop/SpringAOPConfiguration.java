@@ -32,6 +32,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @ComponentScan("com.innominds.aop")
 public class SpringAOPConfiguration {
 
+    // demonstrates different advices
     @Pointcut("execution(** com.innominds.aop.service.*.*())")
     public void servicePointCut() {
 

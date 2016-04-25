@@ -14,7 +14,7 @@ public class SpringAOPTest {
 
         final AccountService accountService = ctx.getBean(AccountService.class);
 
-        System.out.println(accountService.checkBalance());
+        System.out.println(accountService.getTime());
 
         ctx.close();
 

@@ -20,11 +20,11 @@ public class AccountServiceAspect {
 
     @Before("balanceCheckPointCut()")
     public void privilegeCheckAdvice() {
+
         System.out.println("###################  Checking privileges ############## ");
 
         if (!isUserHasPrivileges()) {
             throw new RuntimeException("Used doesn't have privileges ");
-
         }
     }
 

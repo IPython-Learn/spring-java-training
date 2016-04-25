@@ -20,20 +20,16 @@ public class LegacyAccountService {
         if (!isUserHasPrivileges(user)) {
             throw new RuntimeException("Used is not having sufficint privileges to check balance ");
         }
-
         // write logic to read the balance from the database.
-
         return retrieveBalance();
     }
 
     boolean isUserHasPrivileges(String user) {
         // do some logic by hitting DB or something else
-
         return true;
     }
 
     double retrieveBalance() {
-
         // do some logic to retrieve balance
         return 2002.0;
     }
